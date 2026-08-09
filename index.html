@@ -96,11 +96,11 @@
           <img id="mainImage" class="w-full h-full rounded-[12px] object-cover" src="https://res.cloudinary.com/italtour/image/upload/f_auto,q_auto/v1541591972/iy2anob87bzvc49qiups.jpg" alt="KTM 1190 Adventure">
           
           <!-- Arrows -->
-          <button onclick="prevGalleryImage()" class="absolute left-4 top-1/2 -translate-y-1/2 w-[48px] h-[48px] bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-colors shadow-sm cursor-pointer border-none outline-none">
-            <i class="ph ph-arrow-left text-[20px] text-[#333]"></i>
+          <button onclick="prevGalleryImage()" class="absolute left-4 top-1/2 -translate-y-1/2 w-[48px] h-[48px] bg-white/80 hover:bg-[#008850] rounded-full flex items-center justify-center transition-colors shadow-sm cursor-pointer border-none outline-none group">
+            <i class="ph ph-arrow-left text-[20px] text-[#333] group-hover:text-white transition-colors"></i>
           </button>
-          <button onclick="nextGalleryImage()" class="absolute right-4 top-1/2 -translate-y-1/2 w-[48px] h-[48px] bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-colors shadow-sm cursor-pointer border-none outline-none">
-            <i class="ph ph-arrow-right text-[20px] text-[#333]"></i>
+          <button onclick="nextGalleryImage()" class="absolute right-4 top-1/2 -translate-y-1/2 w-[48px] h-[48px] bg-white/80 hover:bg-[#008850] rounded-full flex items-center justify-center transition-colors shadow-sm cursor-pointer border-none outline-none group">
+            <i class="ph ph-arrow-right text-[20px] text-[#333] group-hover:text-white transition-colors"></i>
           </button>
 
           <!-- Overlay Thumbnails (Bottom Center) -->
@@ -164,9 +164,9 @@
             <a href="#" class="bg-[#008850] text-[#ffffff] px-[24px] py-[12px] rounded-[48px] text-[16px] font-medium hover:opacity-90 transition-opacity">Write a Review</a>
           </div>
 
-          <div class="flex flex-col gap-6">
+          <div class="flex flex-col">
             <!-- Review 1 -->
-            <div class="text-[#333] flex gap-4">
+            <div class="text-[#333] flex gap-4 border-b border-[#eee] pb-6 mb-6 last:border-0 last:pb-0 last:mb-0">
               <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0" src="https://res.cloudinary.com/italtour/image/upload/c_lfill,f_auto,g_north,h_141,q_auto,w_100/v1477113398/eswgge2gghup30jnxfhl.png">
               <div class="flex-1 w-full">
                 <div class="flex items-center gap-2 mb-1 justify-between w-full">
@@ -183,9 +183,9 @@
           </div>
           <div class="mt-12">
             <h3 class="text-[24px] font-medium m-0 text-[#333] mb-8">Other Reviews</h3>
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col">
               <!-- Review 1 -->
-              <div class="text-[#333] flex gap-4">
+              <div class="text-[#333] flex gap-4 border-b border-[#eee] pb-6 mb-6 last:border-0 last:pb-0 last:mb-0">
                 <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0 bg-white p-1" src="https://cdn-icons-png.flaticon.com/512/1986/1986966.png" alt="Helmet">
                 <div class="flex-1 w-full">
                   <div class="mb-1">
@@ -199,7 +199,7 @@
               </div>
 
               <!-- Review 2 -->
-              <div class="text-[#333] flex gap-4">
+              <div class="text-[#333] flex gap-4 border-b border-[#eee] pb-6 mb-6 last:border-0 last:pb-0 last:mb-0">
                 <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0 bg-white p-1" src="https://cdn-icons-png.flaticon.com/512/1986/1986966.png" alt="Helmet">
                 <div class="flex-1 w-full">
                   <div class="mb-1">
@@ -213,7 +213,7 @@
               </div>
 
               <!-- Review 3 -->
-              <div class="text-[#333] flex gap-4">
+              <div class="text-[#333] flex gap-4 border-b border-[#eee] pb-6 mb-6 last:border-0 last:pb-0 last:mb-0">
                 <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0 bg-white p-1" src="https://cdn-icons-png.flaticon.com/512/1986/1986966.png" alt="Helmet">
                 <div class="flex-1 w-full">
                   <div class="mb-1">
@@ -227,7 +227,7 @@
               </div>
 
               <!-- Review 4 -->
-              <div class="text-[#333] flex gap-4">
+              <div class="text-[#333] flex gap-4 border-b border-[#eee] pb-6 mb-6 last:border-0 last:pb-0 last:mb-0">
                 <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0 bg-white p-1" src="https://cdn-icons-png.flaticon.com/512/1986/1986966.png" alt="Helmet">
                 <div class="flex-1 w-full">
                   <div class="mb-1">
@@ -241,7 +241,7 @@
               </div>
 
               <!-- Review 5 -->
-              <div class="text-[#333] flex gap-4">
+              <div class="text-[#333] flex gap-4 border-b border-[#eee] pb-6 mb-6 last:border-0 last:pb-0 last:mb-0">
                 <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0 bg-white p-1" src="https://cdn-icons-png.flaticon.com/512/1986/1986966.png" alt="Helmet">
                 <div class="flex-1 w-full">
                   <div class="mb-1">
@@ -374,59 +374,55 @@
       </div>
     </div>
     
-
-  </div>
-
-  <!-- Footer -->
-  <div class="bg-[#f5f5f5] pt-10 pb-5 border-t border-[#e5e5e5]">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap">
-        <div class="w-full md:w-3/4">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-[#333]">
-            <div>
-              <h2 class="font-bold text-lg mb-2 text-[#337ab7]">Home</h2>
-              <hr class="border-[#ddd] mb-2">
-            </div>
-            <div>
-              <h2 class="font-bold text-lg mb-2 text-[#337ab7]">Motorcycles</h2>
-              <hr class="border-[#ddd] mb-2">
-            </div>
-            <div>
-              <h2 class="font-bold text-lg mb-2 text-[#337ab7]">Services</h2>
-              <hr class="border-[#ddd] mb-2">
-            </div>
-            <div>
-              <h2 class="font-bold text-lg mb-2 text-[#337ab7]">About Us</h2>
-              <hr class="border-[#ddd] mb-2">
-            </div>
-          </div>
-          
-          <div class="mt-8">
-            <h3 class="text-xl font-medium mb-2">Company Overview</h3>
-            <p class="text-sm text-gray-600">In our company you will find only new motorcycles for rent at affordable prices. In the Top Rent Moto fleet, everyone will find a suitable option...</p>
-          </div>
+    <!-- Other Models Slider -->
+    <div class="mt-16 mb-8 border-t border-[#eee] pt-16">
+      <div class="flex justify-between items-center mb-8">
+        <h3 class="text-[24px] font-medium m-0 text-[#333]">Discover other models</h3>
+        <div class="flex gap-2">
+          <!-- Arrows -->
+          <button onclick="document.getElementById('modelsSliderEn').scrollBy({left: -300, behavior: 'smooth'})" class="w-[48px] h-[48px] bg-[#f5f5f5] hover:bg-[#008850] rounded-full flex items-center justify-center transition-all shadow-sm cursor-pointer outline-none group">
+            <i class="ph ph-arrow-left text-[20px] text-[#333] group-hover:text-white transition-colors"></i>
+          </button>
+          <button onclick="document.getElementById('modelsSliderEn').scrollBy({left: 300, behavior: 'smooth'})" class="w-[48px] h-[48px] bg-[#f5f5f5] hover:bg-[#008850] rounded-full flex items-center justify-center transition-all shadow-sm cursor-pointer outline-none group">
+            <i class="ph ph-arrow-right text-[20px] text-[#333] group-hover:text-white transition-colors"></i>
+          </button>
         </div>
-        
-        <div class="w-full md:w-1/4 mt-8 md:mt-0 flex flex-col items-center">
-          <div class="bg-white p-4 text-center rounded border border-[#ddd] shadow-sm w-full">
-            <div class="mb-2 text-[#333]">Call now:</div>
-            <a href="tel:+40 757 731 075" class="text-xl italic text-[#337ab7] hover:underline">+40 757 731 075</a>
-          </div>
+      </div>
+      
+      <div class="relative group">
+        <!-- Slider Track -->
+        <div id="modelsSliderEn" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          <!-- Item 1 -->
+          <a href="#" class="flex flex-col items-center justify-between min-w-[calc(20%-19.2px)] snap-start group/item bg-[#f5f5f5] hover:bg-[#f0f0f0] rounded-[16px] p-6 transition-colors">
+            <img src="https://res.cloudinary.com/italtour/image/upload/c_limit,f_auto,g_center,h_197,q_auto,w_290/v1517005436/cnouqi057hjtxsnamwbw.png" class="h-[160px] w-full object-contain mb-6 group-hover/item:scale-110 transition-transform duration-300">
+            <span class="text-[#008850] text-[16px] font-medium text-center leading-snug">KTM 1190 Adventure</span>
+          </a>
+          <!-- Item 2 -->
+          <a href="#" class="flex flex-col items-center justify-between min-w-[calc(20%-19.2px)] snap-start group/item bg-[#f5f5f5] hover:bg-[#f0f0f0] rounded-[16px] p-6 transition-colors">
+            <img src="https://res.cloudinary.com/italtour/image/upload/c_limit,f_auto,g_center,h_197,q_auto,w_290/v1517005569/laapnhastsmpwccftcsn.png" class="h-[160px] w-full object-contain mb-6 group-hover/item:scale-110 transition-transform duration-300">
+            <span class="text-[#008850] text-[16px] font-medium text-center leading-snug">Ducati Multistrada 1200</span>
+          </a>
+          <!-- Item 3 -->
+          <a href="#" class="flex flex-col items-center justify-between min-w-[calc(20%-19.2px)] snap-start group/item bg-[#f5f5f5] hover:bg-[#f0f0f0] rounded-[16px] p-6 transition-colors">
+            <img src="https://res.cloudinary.com/italtour/image/upload/c_limit,f_auto,g_center,h_197,q_auto,w_290/v1517006472/t4ooxlbli1ovllnwp6y2.png" class="h-[160px] w-full object-contain mb-6 group-hover/item:scale-110 transition-transform duration-300">
+            <span class="text-[#008850] text-[16px] font-medium text-center leading-snug">Ducati Monster 600</span>
+          </a>
+          <!-- Item 4 -->
+          <a href="#" class="flex flex-col items-center justify-between min-w-[calc(20%-19.2px)] snap-start group/item bg-[#f5f5f5] hover:bg-[#f0f0f0] rounded-[16px] p-6 transition-colors">
+            <img src="https://res.cloudinary.com/italtour/image/upload/c_limit,f_auto,g_center,h_197,q_auto,w_290/v1517006494/jc2c9vg2afvdvhuatbxu.png" class="h-[120px] object-contain mb-6 group-hover/item:scale-110 transition-transform duration-300">
+            <span class="text-[#008850] text-[16px] font-medium text-center leading-snug">BMW R1200RS</span>
+          </a>
+          <!-- Item 5 -->
+          <a href="#" class="flex flex-col items-center justify-between min-w-[calc(20%-19.2px)] snap-start group/item bg-[#f5f5f5] hover:bg-[#f0f0f0] rounded-[16px] p-6 transition-colors">
+            <img src="https://res.cloudinary.com/italtour/image/upload/c_fit,h_200,w_300/o3jczrqzcbxbsoloyfrf.jpg" class="h-[160px] w-full object-contain mix-blend-multiply mb-6 group-hover/item:scale-110 transition-transform duration-300">
+            <span class="text-[#008850] text-[16px] font-medium text-center leading-snug">Moto Guzzi V7</span>
+          </a>
         </div>
       </div>
     </div>
+
   </div>
 
-  <div class="bg-[#111] py-4 text-sm text-[#999]">
-    <div class="container mx-auto flex flex-wrap items-center">
-      <div class="w-full md:w-1/4">
-        <img src="https://res.cloudinary.com/italtour/image/upload/c_limit,f_auto,h_40,w_267/v1544040170/n9fvk0a5pmbeoztvfhmf.png" class="h-[40px]">
-      </div>
-      <div class="w-full md:w-3/4 text-center md:text-left mt-4 md:mt-0">
-        <span>Copyright © 2018 Top Rent Moto. All rights reserved.</span>
-      </div>
-    </div>
-  </div>
 
   <script>
     function toggleAccordion(header) {
