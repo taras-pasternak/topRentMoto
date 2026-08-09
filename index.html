@@ -24,7 +24,7 @@
 <body class="bg-white text-gray-800 text-[14px]">
 
   <!-- Unified Header (Desktop) -->
-  <header class="bg-[var(--color-dark-grey)] text-white py-4 border-b border-[#080808]">
+  <header id="main-header" class="bg-[var(--color-dark-grey)] text-white pt-4 pb-2 border-b border-[#080808] sticky top-0 z-50 transition-all duration-300">
     <div class="container mx-auto">
       
       <!-- Top Left: Language, Phone, Email -->
@@ -57,7 +57,7 @@
         
         <!-- Logo & Slogan -->
         <div class="flex items-center">
-          <a href="/"><img class="h-[48px] mr-[12px]" src="https://res.cloudinary.com/italtour/image/upload/c_limit,f_auto,h_80,w_250/v1544040094/sd2ayrimv1db4twfhuho.png" alt="Top Rent Moto"></a>
+          <a href="/"><img class="h-[56px] mr-[12px]" src="https://res.cloudinary.com/italtour/image/upload/c_limit,f_auto,h_80,w_250/v1544040094/sd2ayrimv1db4twfhuho.png" alt="Top Rent Moto"></a>
           <p class="text-white text-[12px] leading-[1.1] uppercase opacity-50 mt-[4px]" style="letter-spacing: 0.15em;">Motorcycle<br>rental in Italy</p>
         </div>
         
@@ -79,7 +79,7 @@
           </ul>
           
           <!-- Button -->
-          <a href="#contactForm" class="bg-[#008850] text-[#ffffff] text-[16px] font-medium px-[24px] py-[12px] rounded-[8px] inline-block whitespace-nowrap hover:opacity-90 transition-opacity">Get a quote</a>
+          <a href="#contactForm" class="bg-[#008850] text-[#ffffff] text-[16px] font-medium px-[24px] py-[12px] rounded-[48px] inline-block whitespace-nowrap hover:opacity-90 transition-opacity">Get a quote</a>
         </div>
         
       </div>
@@ -91,31 +91,175 @@
     <div class="grid grid-cols-5 gap-[64px]">
       <!-- Left Column: Photos -->
       <div class="col-span-3">
-        <!-- Main Image -->
-        <div class="relative mb-4 aspect-[4/3]">
-          <img class="w-full h-full rounded-[12px] object-cover" src="https://res.cloudinary.com/italtour/image/upload/f_auto,q_auto/v1541591972/iy2anob87bzvc49qiups.jpg" alt="KTM 1190 Adventure">
+        <!-- Main Image with Overlay Thumbnails -->
+        <div class="relative mb-8 aspect-[4/3]">
+          <img id="mainImage" class="w-full h-full rounded-[12px] object-cover" src="https://res.cloudinary.com/italtour/image/upload/f_auto,q_auto/v1541591972/iy2anob87bzvc49qiups.jpg" alt="KTM 1190 Adventure">
           
           <!-- Arrows -->
-          <button class="absolute left-4 top-1/2 -translate-y-1/2 w-[48px] h-[48px] bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-colors shadow-sm cursor-pointer border-none outline-none">
+          <button onclick="prevGalleryImage()" class="absolute left-4 top-1/2 -translate-y-1/2 w-[48px] h-[48px] bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-colors shadow-sm cursor-pointer border-none outline-none">
             <i class="ph ph-arrow-left text-[20px] text-[#333]"></i>
           </button>
-          <button class="absolute right-4 top-1/2 -translate-y-1/2 w-[48px] h-[48px] bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-colors shadow-sm cursor-pointer border-none outline-none">
+          <button onclick="nextGalleryImage()" class="absolute right-4 top-1/2 -translate-y-1/2 w-[48px] h-[48px] bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-colors shadow-sm cursor-pointer border-none outline-none">
             <i class="ph ph-arrow-right text-[20px] text-[#333]"></i>
           </button>
+
+          <!-- Overlay Thumbnails (Bottom Center) -->
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10" id="galleryThumbnails">
+            <!-- Thumbnails -->
+            <img onclick="setGalleryImage(0)" class="w-[64px] h-[48px] rounded-[6px] object-cover border-[3px] border-[#008850] cursor-pointer shadow-sm" src="https://res.cloudinary.com/italtour/image/upload/c_fill,g_center,h_173,q_auto,w_262/v1541591972/iy2anob87bzvc49qiups.jpg">
+            <img onclick="setGalleryImage(1)" class="w-[64px] h-[48px] rounded-[6px] object-cover border-[1px] border-white/70 opacity-80 hover:opacity-100 cursor-pointer shadow-sm transition-opacity" src="https://res.cloudinary.com/italtour/image/upload/c_fill,g_center,h_173,q_auto,w_262/gi7lalnwuhahwiu57vdt.jpg">
+            <img onclick="setGalleryImage(2)" class="w-[64px] h-[48px] rounded-[6px] object-cover border-[1px] border-white/70 opacity-80 hover:opacity-100 cursor-pointer shadow-sm transition-opacity" src="https://res.cloudinary.com/italtour/image/upload/c_fill,g_center,h_173,q_auto,w_262/ftk4c5tfyesc6xym7ujm.jpg">
+            <img onclick="setGalleryImage(3)" class="w-[64px] h-[48px] rounded-[6px] object-cover border-[1px] border-white/70 opacity-80 hover:opacity-100 cursor-pointer shadow-sm transition-opacity" src="https://res.cloudinary.com/italtour/image/upload/c_fill,g_center,h_173,q_auto,w_262/wozxfqye68bb9mubhb1o.jpg">
+            <img onclick="setGalleryImage(4)" class="w-[64px] h-[48px] rounded-[6px] object-cover border-[1px] border-white/70 opacity-80 hover:opacity-100 cursor-pointer shadow-sm transition-opacity" src="https://res.cloudinary.com/italtour/image/upload/c_fill,g_center,h_173,q_auto,w_262/o3jczrqzcbxbsoloyfrf.jpg">
+            <img onclick="setGalleryImage(5)" class="w-[64px] h-[48px] rounded-[6px] object-cover border-[1px] border-white/70 opacity-80 hover:opacity-100 cursor-pointer shadow-sm transition-opacity" src="https://res.cloudinary.com/italtour/image/upload/c_fill,g_center,h_173,q_auto,w_262/pltfvvurrifcb00hkuk3.jpg">
+          </div>
         </div>
-        
-        <!-- Thumbnails -->
-        <div class="flex flex-wrap gap-2 mb-4">
-          <img class="w-[calc(16.666%-8px)] rounded-[12px] opacity-60 hover:opacity-100 cursor-pointer object-cover" src="https://res.cloudinary.com/italtour/image/upload/c_fill,g_center,h_173,q_auto,w_262/gi7lalnwuhahwiu57vdt.jpg">
-          <img class="w-[calc(16.666%-8px)] rounded-[12px] opacity-60 hover:opacity-100 cursor-pointer object-cover" src="https://res.cloudinary.com/italtour/image/upload/c_fill,g_center,h_173,q_auto,w_262/ftk4c5tfyesc6xym7ujm.jpg">
-          <img class="w-[calc(16.666%-8px)] rounded-[12px] opacity-60 hover:opacity-100 cursor-pointer object-cover" src="https://res.cloudinary.com/italtour/image/upload/c_fill,g_center,h_173,q_auto,w_262/wozxfqye68bb9mubhb1o.jpg">
-          <img class="w-[calc(16.666%-8px)] rounded-[12px] opacity-60 hover:opacity-100 cursor-pointer object-cover" src="https://res.cloudinary.com/italtour/image/upload/c_fill,g_center,h_173,q_auto,w_262/o3jczrqzcbxbsoloyfrf.jpg">
-          <img class="w-[calc(16.666%-8px)] rounded-[12px] opacity-60 hover:opacity-100 cursor-pointer object-cover" src="https://res.cloudinary.com/italtour/image/upload/c_fill,g_center,h_173,q_auto,w_262/pltfvvurrifcb00hkuk3.jpg">
+
+
+
+        <!-- Description -->
+        <div class="bg-[#f5f5f5] p-6 rounded-[12px] mt-[72px] flex flex-col gap-6 items-start">
+          <img src="https://res.cloudinary.com/italtour/image/upload/c_limit,f_auto,h_100,w_150/v1470914307/m58uihlyl2ik63qitevt.png" alt="KTM" class="w-[120px] object-contain">
+          <div class="w-full">
+            <div id="brandDescEn" class="text-[16px] text-gray-800 leading-relaxed line-clamp-3 overflow-hidden relative">
+              <p class="mb-2">The KTM 1190 Adventure is a motorcycle radically different from the 990. The whole combo of chassis, electronic suspension and rider aids makes this 150 hp, 230kg bike seriously capable with more rider-friendly characteristics than any previous KTM Adventure model. It can also be ridden faster: it’s similar to a Ducati Multistrada, but with much better off-road suitability.</p>
+              
+              <p class="mb-2">By renting a KTM 1190 Adventure you will be able to enjoy it's high level features:</p>
+              <ul class="list-disc pl-5 mb-4 space-y-1">
+                <li>With 150bhp and 92ftlb of torque and a fully-fuelled weight of 230kg, the KTM has a better power-to-weight ratio than most other motorcycles in its range;</li>
+                <li>KTM build bikes to take on Dakar, they are rough, tough and reliable;</li>
+                <li>The retention of a conventional chain instead of a power-sapping shaft drive means the bike reacts far more accurately to the rider’s throttle inputs;</li>
+              </ul>
+              
+              <h4 class="font-bold text-[16px] mb-2">What is the cost of renting a KTM 1190 Adventure in Italy?</h4>
+              <p class="mb-2">One of the main advantages of renting a KTM 1190 Adventure with us at Top Rent Moto is the reasonable price. We have simplified the rental procedure as much as possible, lowering our prices to a minimum. Also, the only documents necessary are the driver's license and passport to make you can rent a powerful motorcycle without hassle.</p>
+              <p class="mb-4">The price to rent a KTM 1190 Adventure with our company starts at 80 € per day. We also offer discounts and bonuses to regular customers, so it can be reduced by almost half for rental periods of 2 or 3 weeks or other long term rental periods. The mileage is charged separately and it costs 0.25 EUR per km. We also offer an unlimited mileage option for rentals of at least 5 days. It costs 50 EUR per day and it is in addition to the moto rental price. All you need to do to rent a motorcycle in in Italy is to contact our reputable moto rental team from Top Rent Moto. However, it is necessary for the driver to have his passport and a valid driving license, as well as a valid credit card.</p>
+              
+              <h4 class="font-bold text-[16px] mb-2">In which cities can a KTM 1190 Adventure be rented?</h4>
+              <p class="mb-4">You can rent a KTM 1190 Adventure in Rome, Florence, Venice, Amalfi and many other cities in Italy. Also, you can rent a motorcycle with our services in a city and return it in another city, if agreed in advance. We offer multiple pickup and delivery locations to let you enjoy your trip without worrying about your itinerary.</p>
+              
+              <h4 class="font-bold text-[16px] mb-2">How to rent a KTM 1190 Adventure in Italy</h4>
+              <p class="mb-2">To enjoy your visit to this incredible city, you will want to rent a motorcycle. You can enjoy the convenience of booking online so you can have a motorcycle available in Italy as soon as you reach the city.</p>
+              
+              <p class="mb-2">To rent a motorcycle, follow these simple steps:</p>
+              <ul class="list-disc pl-5 mb-4 space-y-1">
+                <li>Learn more about the KTM 1190 Adventure model. You can read its technical specifications here at this page.</li>
+                <li>Click on the "Book now" button.</li>
+                <li>Fill the requested information and click on the "Submit" button.</li>
+                <li>That's it. The Top Rent Moto team will soon contact you to give details about your motorcycle rental.</li>
+              </ul>
+              
+              <p class="mb-0">You can also rent a motorcycle in Milan by sending an email to <a href="mailto:toprentmoto@gmail.com" class="text-[#008850] hover:underline">toprentmoto@gmail.com</a>. We are ready to provide you with the services needed to enjoy your trip in its fullest, such as the rental of technical equipment, such as technical clothing and GPS navigators. We also offer the option of accompanied trips through Italy, which will let you enjoy the best places in the country.</p>
+            </div>
+            <button onclick="const el = document.getElementById('brandDescEn'); el.classList.toggle('line-clamp-3'); this.innerHTML = el.classList.contains('line-clamp-3') ? 'Show more <i class=\'ph ph-caret-down\'></i>' : 'Show less <i class=\'ph ph-caret-up\'></i>'" class="text-[#008850] text-[16px] font-medium mt-2 flex items-center gap-1 hover:underline cursor-pointer bg-transparent border-none p-0 outline-none">
+              Show more <i class="ph ph-caret-down"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="bg-[#f5f5f5] p-6 rounded-[12px] mt-[72px]">
+          <div class="flex items-center justify-between mb-8">
+            <h3 class="text-[24px] font-medium m-0 text-[#333]">Reviews for KTM 1190 Adventure</h3>
+            <a href="#" class="bg-[#008850] text-[#ffffff] px-[24px] py-[12px] rounded-[48px] text-[16px] font-medium hover:opacity-90 transition-opacity">Write a Review</a>
+          </div>
+
+          <div class="flex flex-col gap-6">
+            <!-- Review 1 -->
+            <div class="text-[#333] flex gap-4">
+              <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0" src="https://res.cloudinary.com/italtour/image/upload/c_lfill,f_auto,g_north,h_141,q_auto,w_100/v1477113398/eswgge2gghup30jnxfhl.png">
+              <div class="flex-1 w-full">
+                <div class="flex items-center gap-2 mb-1 justify-between w-full">
+                  <div class="flex items-center gap-2">
+                    <strong class="text-[16px]">Sergey</strong> 
+                    <span class="text-[#f5b301] text-lg leading-none">★★★★★</span>
+                  </div>
+                  <span class="text-sm text-gray-500">19.09.2016</span>
+                </div>
+                <a href="#" class="text-[#337ab7] hover:underline text-sm block mb-2"><strong>KTM 1190 Adventure</strong></a>
+                <p class="text-[16px] text-gray-800 opacity-70 leading-relaxed m-0">Friends, sharing my experience with this wonderful motorcycle - KTM 1190 Adventure. Who would have thought, but you can squeeze a lot out of this baby! This is a full-fledged motorcycle, especially for a beginner. This engine has become a priority option for me!</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-12">
+            <h3 class="text-[24px] font-medium m-0 text-[#333] mb-8">Other Reviews</h3>
+            <div class="flex flex-col gap-6">
+              <!-- Review 1 -->
+              <div class="text-[#333] flex gap-4">
+                <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0 bg-white p-1" src="https://cdn-icons-png.flaticon.com/512/1986/1986966.png" alt="Helmet">
+                <div class="flex-1 w-full">
+                  <div class="mb-1">
+                    <strong class="text-[16px] text-[#333]">Jessica H.</strong> 
+                    <span class="text-[#008850] font-medium mx-1">Ducati Monster 1200</span>
+                    <span class="text-gray-500 text-[14px]">30.04.2024</span>
+                  </div>
+                  <div class="text-[#f5b301] text-lg leading-none mb-2">★★★★★</div>
+                  <p class="text-[16px] text-gray-800 opacity-70 leading-relaxed m-0">I rented a motorcycle from TopRentMoto for a weekend getaway. The service was exceptional from start to finish. The bike was clean, well-maintained, and ready to go. The staff provided excellent recommendations for routes and sights. I had an unforgettable experience and will definitely rent again.</p>
+                </div>
+              </div>
+
+              <!-- Review 2 -->
+              <div class="text-[#333] flex gap-4">
+                <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0 bg-white p-1" src="https://cdn-icons-png.flaticon.com/512/1986/1986966.png" alt="Helmet">
+                <div class="flex-1 w-full">
+                  <div class="mb-1">
+                    <strong class="text-[16px] text-[#333]">Robert B.</strong> 
+                    <span class="text-[#008850] font-medium mx-1">Harley Davidson Street Glide</span>
+                    <span class="text-gray-500 text-[14px]">09.04.2024</span>
+                  </div>
+                  <div class="text-[#f5b301] text-lg leading-none mb-2">★★★★★</div>
+                  <p class="text-[16px] text-gray-800 opacity-70 leading-relaxed m-0">TopRentMoto is the best motorcycle rental service I've used. The selection of bikes is impressive, and the quality is top-notch. The staff are friendly and go above and beyond to ensure a great experience. Renting was quick and easy, and the bike performed perfectly. I will definitely be back!</p>
+                </div>
+              </div>
+
+              <!-- Review 3 -->
+              <div class="text-[#333] flex gap-4">
+                <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0 bg-white p-1" src="https://cdn-icons-png.flaticon.com/512/1986/1986966.png" alt="Helmet">
+                <div class="flex-1 w-full">
+                  <div class="mb-1">
+                    <strong class="text-[16px] text-[#333]">Lisa S.</strong> 
+                    <span class="text-[#008850] font-medium mx-1">Ducati Supersport</span>
+                    <span class="text-gray-500 text-[14px]">18.09.2023</span>
+                  </div>
+                  <div class="text-[#f5b301] text-lg leading-none mb-2">★★★★★</div>
+                  <p class="text-[16px] text-gray-800 opacity-70 leading-relaxed m-0">I had a great experience renting from TopRentMoto. The staff were knowledgeable and made sure I had everything I needed for a safe trip. The bike was in excellent condition and ran perfectly. The whole process was easy and stress-free. I will definitely rent from them again.</p>
+                </div>
+              </div>
+
+              <!-- Review 4 -->
+              <div class="text-[#333] flex gap-4">
+                <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0 bg-white p-1" src="https://cdn-icons-png.flaticon.com/512/1986/1986966.png" alt="Helmet">
+                <div class="flex-1 w-full">
+                  <div class="mb-1">
+                    <strong class="text-[16px] text-[#333]">Anna W.</strong> 
+                    <span class="text-[#008850] font-medium mx-1">Moto Guzzi Griso</span>
+                    <span class="text-gray-500 text-[14px]">09.08.2023</span>
+                  </div>
+                  <div class="text-[#f5b301] text-lg leading-none mb-2">★★★★★</div>
+                  <p class="text-[16px] text-gray-800 opacity-70 leading-relaxed m-0">My experience with TopRentMoto was outstanding. The rental process was quick and hassle-free. The motorcycle was in excellent condition and ready for my adventure. The team was very accommodating and answered all my questions. I had a blast riding and will definitely be back.</p>
+                </div>
+              </div>
+
+              <!-- Review 5 -->
+              <div class="text-[#333] flex gap-4">
+                <img class="w-[60px] h-[60px] rounded-full object-cover shrink-0 bg-white p-1" src="https://cdn-icons-png.flaticon.com/512/1986/1986966.png" alt="Helmet">
+                <div class="flex-1 w-full">
+                  <div class="mb-1">
+                    <strong class="text-[16px] text-[#333]">Michael L.</strong> 
+                    <span class="text-[#008850] font-medium mx-1">HONDA GOLDWING 1800GL</span>
+                    <span class="text-gray-500 text-[14px]">30.07.2023</span>
+                  </div>
+                  <div class="text-[#f5b301] text-lg leading-none mb-2">★★★★★</div>
+                  <p class="text-[16px] text-gray-800 opacity-70 leading-relaxed m-0">TopRentMoto has excellent service and high-quality bikes. I rented a motorcycle for a weekend, and it was a smooth experience. The staff were professional and provided all necessary information. The bike was clean and well-maintained. I had a great ride and will rent from them again.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Right Column: Info & CTA -->
-      <div class="col-span-2">
+      <div class="col-span-2 sticky top-[160px] self-start">
         <!-- Breadcrumbs -->
         <ol class="flex text-sm text-[#337ab7] mb-5">
           <li><a href="/" class="hover:underline">Home</a><span class="mx-2 text-gray-400">/</span></li>
@@ -125,101 +269,112 @@
 
         <!-- Header -->
         <div class="mb-6">
-          <h2 class="text-[48px] font-normal text-[#333] leading-tight">Rent KTM 1190 Adventure in Italy</h2>
+          <h2 class="text-[48px] font-semibold text-[#333] leading-[1.1]">Rent KTM 1190 Adventure<br>in Italy</h2>
         </div>
 
         <!-- CTA Section -->
-        <div class="mb-8">
-          <div class="text-[#333] text-[20px] font-medium mb-4">
-            Rent from <span class="font-bold text-[24px]">95€</span> <span class="text-gray-500 text-[16px] font-normal">/ day</span>
+        <div class="mb-0">
+          <div class="text-[#333] text-[24px] font-normal mb-6">
+            from 95€ / day
           </div>
-          <div class="flex items-center gap-6">
-            <button class="bg-[#008850] text-[#ffffff] text-[16px] font-medium px-[24px] py-[12px] rounded-[8px] inline-block whitespace-nowrap hover:opacity-90 transition-opacity">Book now</button>
-            <div class="text-[14px] text-gray-500 leading-tight">
-              or Call now:<br>
-              <a href="tel:+40 757 731 075" class="text-[#333] font-semibold text-[16px] hover:underline">+40 757 731 075</a>
+          <div class="flex items-center gap-6 mb-12">
+            <button class="bg-[#008850] text-[#ffffff] text-[16px] font-medium px-[40px] py-[16px] rounded-[48px] inline-block whitespace-nowrap hover:opacity-90 transition-opacity">Book now</button>
+            <div class="flex flex-col">
+              <span class="text-[12px] text-gray-500 uppercase tracking-wider leading-none mb-1">or Call now:</span>
+              <a href="tel:+40 757 731 075" class="text-[22px] font-medium text-[#008850] hover:opacity-80 transition-opacity leading-none">+40 757 731 075</a>
+            </div>
+          </div>
+          <div class="h-px bg-gray-200 w-full"></div>
+        </div>
+
+        <!-- Accordion 1: Moto Specifications -->
+        <div class="flex items-center justify-between cursor-pointer py-4" onclick="toggleAccordion(this)">
+          <h3 class="text-[16px] font-medium text-[#333]">Moto Specifications</h3>
+          <i class="ph ph-caret-down text-gray-500 text-[20px] transition-transform duration-300 accordion-icon rotate-180"></i>
+        </div>
+        <div class="grid grid-rows-[1fr] transition-[grid-template-rows] duration-300 accordion-content">
+          <div class="overflow-hidden">
+            <div class="flex divide-x divide-gray-300 mb-6 items-center py-2">
+              <!-- Capacity -->
+              <div class="flex flex-col pr-3 flex-1 justify-center">
+                <div class="text-[28px] font-normal text-[#333] leading-none mb-4">1190</div>
+                <div class="flex items-center gap-1.5 text-gray-500">
+                  <i class="ph-light ph-engine text-[22px] shrink-0"></i>
+                  <span class="text-[14px] leading-tight">Engine (cc)</span>
+                </div>
+              </div>
+              
+              <!-- Power -->
+              <div class="flex flex-col px-3 flex-1 justify-center">
+                <div class="text-[28px] font-normal text-[#333] leading-none mb-4">148</div>
+                <div class="flex items-center gap-1.5 text-gray-500">
+                  <i class="ph-light ph-lightning text-[22px] shrink-0"></i>
+                  <span class="text-[14px] leading-tight">Power (hp)</span>
+                </div>
+              </div>
+              
+              <!-- Weight -->
+              <div class="flex flex-col px-3 flex-1 justify-center">
+                <div class="text-[28px] font-normal text-[#333] leading-none mb-4">212</div>
+                <div class="flex items-center gap-1.5 text-gray-500">
+                  <i class="ph-light ph-scales text-[22px] shrink-0"></i>
+                  <span class="text-[14px] leading-tight">Weight</span>
+                </div>
+              </div>
+              
+              <!-- Cylinders -->
+              <div class="flex flex-col pl-3 flex-1 justify-center">
+                <div class="text-[28px] font-normal text-[#333] leading-none mb-4">2</div>
+                <div class="flex items-center gap-1.5 text-gray-500">
+                  <i class="ph-light ph-wrench text-[22px] shrink-0"></i>
+                  <span class="text-[14px] leading-tight whitespace-nowrap">Number of cylinders</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Description -->
-        <div class="bg-[#f5f5f5] p-4 rounded mb-4 flex gap-4 items-start">
-          <img src="https://res.cloudinary.com/italtour/image/upload/c_limit,f_auto,h_100,w_150/v1470914307/m58uihlyl2ik63qitevt.png" alt="KTM" class="w-[80px] shrink-0 object-contain mt-1">
-          <div class="flex-1">
-            <div id="brandDescEn" class="text-[14px] text-[#333] leading-relaxed line-clamp-3 overflow-hidden relative">
-              <p class="mb-2">The KTM 1190 Adventure is a motorcycle radically different from the 990. The whole combo of chassis, electronic suspension and rider aids makes this 150 hp, 230kg bike seriously capable with more rider-friendly characteristics than any previous KTM Adventure model. It can also be ridden faster: it’s similar to a Ducati Multistrada, but with much better off-road suitability. By renting a KTM 1190 Adventure you will be able to enjoy it's high level features:</p>
-              <ul class="list-disc pl-5 mb-2">
-                <li>With 150bhp and 92ftlb of torque and a fully-fuelled weight of 230kg, the KTM has a better power-to-weight ratio than most other motorcycles in its range;</li>
-                <li>KTM build bikes to take on Dakar, they are rough, tough and reliable;</li>
-                <li>The retention of a conventional chain instead of a power-sapping shaft drive means the bike reacts far more accurately to the rider’s throttle inputs;</li>
-              </ul>
-              <p class="mb-0">One of the main advantages of renting a KTM 1190 Adventure with us at Top Rent Moto is the reasonable price. We have simplified the rental procedure as much as possible, lowering our prices to a minimum.</p>
+        <!-- Accordion 2: Rental Conditions -->
+        <div class="border-t border-gray-200 py-4 flex items-center justify-between cursor-pointer" onclick="toggleAccordion(this)">
+          <h3 class="text-[16px] font-medium text-[#333]">Rental Conditions</h3>
+          <i class="ph ph-caret-down text-gray-500 text-[20px] transition-transform duration-300 accordion-icon"></i>
+        </div>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 accordion-content">
+          <div class="overflow-hidden">
+            <div class="pb-6 text-[16px] text-[#333] leading-relaxed space-y-4">
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-1">Age and CC deposit</h4>
+                <p>For insurance reasons, the minimum age for rental is at least 18 years. A valid driver’s license is always required to rent a KTM 1190 Adventure in Italy, as well as a minimum amount of 1500 in your credit card, which is blocked on the rental period and released only after the return of the motorcycle.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-1">Assurance</h4>
+                <p>The moto insurance system (CASCO) which is applied to all vehicles provides collision damage to the rented vehicle, but does not cover such things as damages to other vehicles, property or injury to other persons.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-1">Price and milleage</h4>
+                <p>The rental price does not include mileage. The cost of each kilometer 0.22.</p>
+              </div>
             </div>
-            <button onclick="const el = document.getElementById('brandDescEn'); el.classList.toggle('line-clamp-3'); this.innerHTML = el.classList.contains('line-clamp-3') ? 'Show more <i class=\'ph ph-caret-down\'></i>' : 'Show less <i class=\'ph ph-caret-up\'></i>'" class="text-[#008850] text-[14px] font-medium mt-2 flex items-center gap-1 hover:underline cursor-pointer bg-transparent border-none p-0 outline-none">
-              Show more <i class="ph ph-caret-down"></i>
-            </button>
           </div>
         </div>
-
-        <h3 class="text-2xl mt-5 mb-2 font-medium">Characteristics</h3>
         
-        <div class="border-b border-[#eee] py-2 flex items-center justify-between">
-          <div class="flex items-center text-[#333]">
-            <img src="http://res.cloudinary.com/italtour/image/upload/v1481821640/xoca2nlpijd3nvvg73rh.jpg" class="w-[30px] mr-2">
-            Capacity
-          </div>
-          <div class="text-[#333]">1190</div>
+        <!-- Accordion 3: Other Brand Models KTM -->
+        <div class="border-t border-gray-200 py-4 flex items-center justify-between cursor-pointer" onclick="toggleAccordion(this)">
+          <h3 class="text-[16px] font-medium text-[#333]">Other Brand Models KTM</h3>
+          <i class="ph ph-caret-down text-gray-500 text-[20px] transition-transform duration-300 accordion-icon"></i>
         </div>
-        <div class="border-b border-[#eee] py-2 flex items-center justify-between">
-          <div class="flex items-center text-[#333]">
-            <img src="http://res.cloudinary.com/italtour/image/upload/v1481821819/olyrr8lp1cconhyd3fhm.jpg" class="w-[30px] mr-2">
-            Power (HP)
-          </div>
-          <div class="text-[#333]">148</div>
-        </div>
-        <div class="border-b border-[#eee] py-2 flex items-center justify-between">
-          <div class="flex items-center text-[#333]">
-            <img src="http://res.cloudinary.com/italtour/image/upload/v1481821640/m3rapiaxcknnkdcslh8d.jpg" class="w-[30px] mr-2">
-            Weight
-          </div>
-          <div class="text-[#333]">212</div>
-        </div>
-        <div class="border-b border-[#eee] py-2 flex items-center justify-between mb-4">
-          <div class="flex items-center text-[#333]">
-            <img src="http://res.cloudinary.com/italtour/image/upload/v1481821919/yxlkubm8adlacwkplc7y.jpg" class="w-[30px] mr-2">
-            Cylinders
-          </div>
-          <div class="text-[#333]">2</div>
-        </div>
-
-        <div class="mt-8">
-          <div class="bg-[#dff0d8] text-[#3c763d] px-4 py-3 rounded text-sm border border-[#d6e9c6] inline-block">
-            <a href="#" class="hover:underline">Rental terms</a>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 accordion-content">
+          <div class="overflow-hidden">
+            <div class="pb-6 text-[16px] text-[#333] leading-relaxed">
+              <p>Content for other models goes here...</p>
+            </div>
           </div>
         </div>
+        <div class="border-b border-gray-200 mb-8"></div>
       </div>
     </div>
     
-    <div class="w-full mt-8">
-      <hr class="border-[#eee] mb-6">
-    </div>
 
-    <!-- Reviews -->
-    <div class="flex flex-col items-center max-w-4xl mx-auto mb-10">
-      <h3 class="text-2xl font-medium mb-2">Reviews for KTM 1190 Adventure</h3>
-      <a href="#" class="btn-primary px-3 py-1.5 rounded text-sm mb-6 inline-block">Write a Review</a>
-
-      <div class="w-full">
-        <!-- Review 1 -->
-        <div class="mt-5 text-[#333]">
-          <img class="float-left mr-3 p-1 border border-gray-200 rounded max-w-[100px] max-h-[141px]" src="https://res.cloudinary.com/italtour/image/upload/c_lfill,f_auto,g_north,h_141,q_auto,w_100/v1477113398/eswgge2gghup30jnxfhl.png">
-          <strong>Sergey</strong> <a href="#" class="text-[#337ab7] hover:underline"><strong>KTM 1190 Adventure</strong></a> <span class="text-sm">19.09.2016</span>
-          <div class="text-[#f5b301] text-lg my-1">★★★★★</div>
-          <p class="text-sm">Friends, sharing my experience with this wonderful motorcycle - KTM 1190 Adventure. Who would have thought, but you can squeeze a lot out of this baby! This is a full-fledged motorcycle, especially for a beginner. This engine has become a priority option for me!</p>
-          <div class="clear-both"></div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- Footer -->
@@ -273,5 +428,61 @@
     </div>
   </div>
 
+  <script>
+    function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector('.accordion-icon');
+      
+      if (content.classList.contains('grid-rows-[0fr]')) {
+        // Open accordion
+        content.classList.remove('grid-rows-[0fr]');
+        content.classList.add('grid-rows-[1fr]');
+        icon.classList.add('rotate-180');
+      } else {
+        // Close accordion
+        content.classList.remove('grid-rows-[1fr]');
+        content.classList.add('grid-rows-[0fr]');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    // Gallery Logic
+    const galleryImages = [
+      'https://res.cloudinary.com/italtour/image/upload/f_auto,q_auto/v1541591972/iy2anob87bzvc49qiups.jpg',
+      'https://res.cloudinary.com/italtour/image/upload/f_auto,q_auto/gi7lalnwuhahwiu57vdt.jpg',
+      'https://res.cloudinary.com/italtour/image/upload/f_auto,q_auto/ftk4c5tfyesc6xym7ujm.jpg',
+      'https://res.cloudinary.com/italtour/image/upload/f_auto,q_auto/wozxfqye68bb9mubhb1o.jpg',
+      'https://res.cloudinary.com/italtour/image/upload/f_auto,q_auto/o3jczrqzcbxbsoloyfrf.jpg',
+      'https://res.cloudinary.com/italtour/image/upload/f_auto,q_auto/pltfvvurrifcb00hkuk3.jpg'
+    ];
+    let currentGalleryIndex = 0;
+
+    function setGalleryImage(index) {
+      currentGalleryIndex = index;
+      document.getElementById('mainImage').src = galleryImages[index];
+      updateGalleryThumbnails();
+    }
+
+    function prevGalleryImage() {
+      currentGalleryIndex = (currentGalleryIndex - 1 + galleryImages.length) % galleryImages.length;
+      setGalleryImage(currentGalleryIndex);
+    }
+
+    function nextGalleryImage() {
+      currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+      setGalleryImage(currentGalleryIndex);
+    }
+
+    function updateGalleryThumbnails() {
+      const thumbs = document.querySelectorAll('#galleryThumbnails img');
+      thumbs.forEach((thumb, index) => {
+        if (index === currentGalleryIndex) {
+          thumb.className = "w-[64px] h-[48px] rounded-[6px] object-cover border-[3px] border-white cursor-pointer shadow-sm";
+        } else {
+          thumb.className = "w-[64px] h-[48px] rounded-[6px] object-cover border-[1px] border-white/70 opacity-80 hover:opacity-100 cursor-pointer shadow-sm transition-opacity";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
