@@ -1,15 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #ff5e00;
-  --color-primary-dark: #cc4b00;
-  
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-display: 'Outfit', system-ui, sans-serif;
+  --color-brand-green: #008850;
+  --color-button-text: #ffffff;
+  --color-dark-grey: #222222;
 }
 
 @layer base {
   body {
-    @apply antialiased text-slate-800 bg-slate-50;
+    /* Base styles already defined in index.html but we can keep it clean here */
+  }
+}
+
+@layer utilities {
+  .text-body-bold {
+    font-size: 16px;
+    font-weight: 500;
   }
 }
